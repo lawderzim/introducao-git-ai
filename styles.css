@@ -1,0 +1,33 @@
+:root {
+  --bg: #0f172a;
+  --fg: #e2e8f0;
+  --accent: #22d3ee;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bg);
+  color: var(--fg);
+}
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2rem 1rem 4rem;
+}
+h1 { font-size: 2.5rem; margin: 0 0 0.5rem; }
+.actions { margin: 1rem 0 2rem; }
+button {
+  background: transparent;
+  color: var(--fg);
+  border: 1px solid var(--fg);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+button:hover { border-color: var(--accent); color: var(--accent); }
+.accent { color: var(--accent); }
+
+
