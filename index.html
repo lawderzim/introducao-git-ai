@@ -3,15 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Olá Mundo - Aula Git/Gitflow</title>
+    <title>Olá Mundo - Aula Git/Gitflow v1.0.0</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <main class="container">
-      <h1 id="greeting">Olá, mundo!</h1>
+      <h1 id="greeting">Olá, mundo! 👋</h1>
       <p><b>Este</b> é um projeto HTML estático para praticarmos Git e Gitflow.</p>
       <div class="actions">
         <button id="toggle-color">Mudar cor do título</button>
+        <button id="open-modal">Abrir Modal</button>
       </div>
       <section class="tips">
         <h2>Ideias de exercícios</h2>
@@ -22,8 +23,19 @@
         </ul>
       </section>
     </main>
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Modal de Exemplo</h2>
+        <p>Este é um modal criado para demonstrar funcionalidades do GitFlow!</p>
+        <p>Você pode fechar clicando no X ou fora do modal.</p>
+      </div>
+    </div>
+
     <script src="script.js"></script>
   </body>
-  </html>
+</html>
 
 
