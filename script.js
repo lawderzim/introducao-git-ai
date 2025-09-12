@@ -5,6 +5,32 @@ document.addEventListener('DOMContentLoaded', () => {
   button.addEventListener('click', () => {
     title.classList.toggle('accent');
   });
+
+  // Funcionalidade do Modal
+  const modal = document.getElementById('modal');
+  const openModalBtn = document.getElementById('open-modal');
+  const closeBtn = document.getElementsByClassName('close')[0];
+
+  if (openModalBtn && modal) {
+    openModalBtn.addEventListener('click', () => {
+      modal.style.display = 'block';
+    });
+  }
+
+  if (closeBtn && modal) {
+    closeBtn.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  }
+
+  // Fechar modal clicando fora dele
+  if (modal) {
+    window.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  }
 });
 
 
