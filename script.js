@@ -5,6 +5,17 @@ document.addEventListener('DOMContentLoaded', () => {
   button.addEventListener('click', () => {
     title.classList.toggle('accent');
   });
+
+  // Funcionalidade do contador
+  const counterButton = document.getElementById('increment-counter');
+  const counterSpan = document.getElementById('counter');
+  if (!counterButton || !counterSpan) return;
+  
+  let count = 0;
+  counterButton.addEventListener('click', () => {
+    count++;
+    counterSpan.textContent = count;
+  });
 });
 
 
