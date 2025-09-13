@@ -31,6 +31,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Funcionalidade de personalização da saudação
+  const personalizeBtn = document.getElementById('personalize-greeting');
+  if (personalizeBtn && title) {
+    personalizeBtn.addEventListener('click', () => {
+      if (title.textContent === 'Olá, mundo!') {
+        title.textContent = 'Olá, Cadmio! Bem-vindo ao Git!';
+        personalizeBtn.textContent = 'Voltar ao padrão';
+      } else {
+        title.textContent = 'Olá, mundo!';
+        personalizeBtn.textContent = 'Personalizar Saudação';
+      }
+    });
+  }
 });
 
 
