@@ -14,8 +14,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 5,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{99b8fa2f-ab90-4f57-9c32-949f146f1914}"
@@ -40,14 +44,10 @@
               "RelativeDocumentMoniker": "index.html",
               "ToolTip": "C:\\Users\\fcambiaghi\\source\\repos\\introducao-git-ai\\index.html",
               "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAIAAAAAAAAAA==",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-09-13T11:59:50.359Z",
+              "WhenOpened": "2025-09-13T12:24:27.595Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             }
           ]
         }
