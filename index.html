@@ -1,19 +1,25 @@
 <!doctype html>
 <html lang="pt-BR">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Olá Mundo - Aula Git/Gitflow</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main class="container">
       <h1 id="greeting">Olá, mundo!</h1>
+
+      <!-- Botão para abrir os destaques da semana -->
+      <button id="openHighlights">Ver destaques da semana</button>
+
       <p><b>Este</b> é um projeto HTML estático para praticarmos Git e Gitflow.</p>
+
       <div class="actions">
         <button id="toggle-color">Mudar cor do título</button>
         <button id="open-modal">Abrir Modal</button>
       </div>
+
       <section class="tips">
         <h2>Ideias de exercícios</h2>
         <ul>
@@ -24,18 +30,76 @@
       </section>
     </main>
 
-    <!-- Modal -->
+    <!-- Modal já existente do projeto -->
     <div id="modal" class="modal">
       <div class="modal-content">
-        <span class="close">&times;</span>
+        <span class="close" data-target="modal" title="Fechar">&times;</span>
         <h2>Modal de Exemplo</h2>
         <p>Este é um modal criado para demonstrar funcionalidades do GitFlow!</p>
         <p>Você pode fechar clicando no X ou fora do modal.</p>
       </div>
     </div>
 
+    <!-- NOVO: Modal de “Destaques da Semana” -->
+    <div id="highlightsModal" class="modal">
+      <div class="modal-content">
+        <span class="close" data-target="highlightsModal" title="Fechar">&times;</span>
+        <h2 class="accent">Destaques da Semana</h2>
+        <ul>
+          <li>✅ Resolveu conflito em <code>styles.css</code></li>
+          <li>✅ Criou branch de feature</li>
+          <li>🛠️ Próximo: preparar release (aguardar orientação do professor)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Script original do projeto -->
     <script src="script.js"></script>
+
+    <!-- Script mínimo para abrir/fechar os modais sem tocar no script.js -->
+    <script>
+      // Utilitário: abre/fecha um modal pelo id
+      function openModal(id) {
+        var el = document.getElementById(id);
+        if (el) el.style.display = 'block';
+      }
+      function closeModal(id) {
+        var el = document.getElementById(id);
+        if (el) el.style.display = 'none';
+      }
+
+      // Botão "Abrir Modal" já existente
+      var openExampleBtn = document.getElementById('open-modal');
+      if (openExampleBtn) {
+        openExampleBtn.addEventListener('click', function () {
+          openModal('modal');
+        });
+      }
+
+      // NOVO: Botão "Ver destaques da semana"
+      var openHighlightsBtn = document.getElementById('openHighlights');
+      if (openHighlightsBtn) {
+        openHighlightsBtn.addEventListener('click', function () {
+          openModal('highlightsModal');
+        });
+      }
+
+      // Fechar pelos botões "X" de cada modal
+      var closeButtons = document.querySelectorAll('.modal .close');
+      closeButtons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var target = btn.getAttribute('data-target');
+          if (target) closeModal(target);
+        });
+      });
+
+      // Fechar clicando fora do conteúdo do modal
+      window.addEventListener('click', function (e) {
+        var example = document.getElementById('modal');
+        var highlights = document.getElementById('highlightsModal');
+        if (e.target === example) closeModal('modal');
+        if (e.target === highlights) closeModal('highlightsModal');
+      });
+    </script>
   </body>
 </html>
-
-
