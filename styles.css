@@ -37,7 +37,8 @@ button:hover {
 }
 .accent { color: var(--accent); }
 
-<<<<<<< HEAD
+/* ---- Mantém os dois blocos ---- */
+
 .tips {
   background: rgba(34, 211, 238, 0.1);
   border: 1px solid rgba(34, 211, 238, 0.3);
@@ -57,7 +58,8 @@ button:hover {
 .tips li {
   margin-bottom: 0.5rem;
   line-height: 1.6;
-=======
+}
+
 /* Modal Styles */
 .modal {
   display: none;
@@ -94,7 +96,6 @@ button:hover {
 
 .close:hover {
   color: var(--fg);
->>>>>>> feature/adicionar-modal
 }
 
 
