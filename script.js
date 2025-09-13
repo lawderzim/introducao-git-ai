@@ -31,6 +31,24 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Funcionalidade de validação
+  const validateBtn = document.getElementById('validate-input');
+  const userInput = document.getElementById('user-input');
+  
+  if (validateBtn && userInput) {
+    validateBtn.addEventListener('click', () => {
+      const value = userInput.value.trim();
+      if (value.length < 2) {
+        alert('Nome deve ter pelo menos 2 caracteres!');
+        userInput.style.borderColor = 'red';
+      } else {
+        alert(`Olá, ${value}! Bem-vindo!`);
+        userInput.style.borderColor = 'green';
+        userInput.value = '';
+      }
+    });
+  }
 });
 
 
