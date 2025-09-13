@@ -45,6 +45,44 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Funcionalidade dos destaques da semana
+  const editPositiveBtn = document.getElementById('edit-positive');
+  const editNegativeBtn = document.getElementById('edit-negative');
+  const positiveHighlight = document.getElementById('positive-highlight');
+  const negativeHighlight = document.getElementById('negative-highlight');
+
+  function editHighlight(element, button, type) {
+    const currentText = element.textContent;
+    const newText = prompt(`Editar ${type}:`, currentText);
+    
+    if (newText !== null && newText.trim() !== '') {
+      element.textContent = newText.trim();
+      button.textContent = 'Salvo!';
+      button.style.background = 'rgba(16, 185, 129, 0.2)';
+      button.style.borderColor = '#10b981';
+      button.style.color = '#10b981';
+      
+      setTimeout(() => {
+        button.textContent = 'Editar';
+        button.style.background = 'transparent';
+        button.style.borderColor = '';
+        button.style.color = '';
+      }, 2000);
+    }
+  }
+
+  if (editPositiveBtn && positiveHighlight) {
+    editPositiveBtn.addEventListener('click', () => {
+      editHighlight(positiveHighlight, editPositiveBtn, 'destaque positivo');
+    });
+  }
+
+  if (editNegativeBtn && negativeHighlight) {
+    editNegativeBtn.addEventListener('click', () => {
+      editHighlight(negativeHighlight, editNegativeBtn, 'destaque negativo');
+    });
+  }
 });
 
 
